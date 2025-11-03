@@ -106,6 +106,7 @@ export default function Home() {
                     <span className="px-2 py-0.5 bg-emerald-500/20 border border-emerald-400/20 rounded text-white/80 text-xs">FastAPI</span>
                     <span className="px-2 py-0.5 bg-cyan-400/20 border border-cyan-300/20 rounded text-white/80 text-xs">React</span>
                     <span className="px-2 py-0.5 bg-purple-500/20 border border-purple-400/20 rounded text-white/80 text-xs">Groq/Gemini</span>
+                    <span className="px-2 py-0.5 bg-blue-500/20 border border-blue-400/20 rounded text-white/80 text-xs">Fetch.AI</span>
                   </div>
                 </div>
 
