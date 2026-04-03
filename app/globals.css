@@ -51,19 +51,28 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 1.5rem; /* rounded-3xl */
-  padding: 1.5rem; /* p-6 */
+  border-radius: 1.5rem;
+  padding: 1.5rem;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
 
-.bento-card:hover {
-  transform: scale(1.01);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 20px rgba(34, 211, 238, 0.1); /* shadow-2xl + accent-tinted shadow */
+@media (max-width: 640px) {
+  .bento-card {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
 }
 
+.bento-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 20px rgba(34, 211, 238, 0.1);
+}
 
+/* ======================== */
+/* Cloud drift animations   */
+/* ======================== */
 @keyframes floatCloud {
   0% { transform: translateX(-150px); opacity: 0; }
   10% { opacity: 0.8; }
@@ -71,17 +80,11 @@ body {
   100% { transform: translateX(110vw); opacity: 0; }
 }
 
-.animate-cloud-1 {
-  animation: floatCloud 45s linear infinite;
-}
-.animate-cloud-2 {
-  animation: floatCloud 60s linear infinite;
-  animation-delay: -15s;
-}
-.animate-cloud-3 {
-  animation: floatCloud 50s linear infinite;
-  animation-delay: -30s;
-}
+.animate-cloud-1 { animation: floatCloud 45s linear infinite; }
+.animate-cloud-2 { animation: floatCloud 60s linear infinite; animation-delay: -15s; }
+.animate-cloud-3 { animation: floatCloud 50s linear infinite; animation-delay: -30s; }
+.animate-cloud-4 { animation: floatCloud 55s linear infinite; animation-delay: -10s; }
+.animate-cloud-5 { animation: floatCloud 65s linear infinite; animation-delay: -40s; }
 
 /* Header mini-cloud drift animations */
 @keyframes headerCloudDrift1 {
@@ -106,7 +109,9 @@ body {
 .animate-header-cloud-2 { animation: headerCloudDrift2 8s ease-in-out infinite; }
 .animate-header-cloud-3 { animation: headerCloudDrift3 7s ease-in-out infinite; }
 
-/* Star twinkle animations */
+/* ======================== */
+/* Star & Space animations  */
+/* ======================== */
 @keyframes twinkle1 {
   0%, 100% { opacity: 0.3; transform: scale(1); }
   50%      { opacity: 1;   transform: scale(1.6); }
@@ -135,13 +140,8 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-gradient {
-  animation: gradient 6s ease infinite;
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
-}
+.animate-gradient { animation: gradient 6s ease infinite; }
+.animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
 
 @keyframes shootingStar {
   0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 1; }
@@ -180,3 +180,78 @@ body {
   90% { opacity: 0.8; }
   100% { transform: translateX(110vw) translateY(20vh) rotate(15deg); opacity: 0; }
 }
+
+/* ======================== */
+/* NASA Space enhancements  */
+/* ======================== */
+@keyframes nebulaDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.08; }
+  33%      { transform: translate(30px, -20px) scale(1.05); opacity: 0.12; }
+  66%      { transform: translate(-20px, 15px) scale(0.95); opacity: 0.06; }
+}
+
+@keyframes scanLine {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes planetGlow {
+  0%, 100% { box-shadow: 0 0 40px 10px rgba(99,102,241,0.15), inset -20px 10px 30px rgba(0,0,0,0.5); }
+  50%      { box-shadow: 0 0 60px 20px rgba(99,102,241,0.25), inset -20px 10px 30px rgba(0,0,0,0.5); }
+}
+
+.animate-nebula-drift { animation: nebulaDrift 20s ease-in-out infinite; }
+.animate-scan-line { animation: scanLine 8s linear infinite; }
+.animate-planet-glow { animation: planetGlow 4s ease-in-out infinite; }
+
+@keyframes cometFly {
+  0%   { transform: translateX(0) translateY(0); opacity: 0; }
+  5%   { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateX(-120vw) translateY(80vh); opacity: 0; }
+}
+
+@keyframes issOrbit {
+  0%   { transform: translateX(0) translateY(0); opacity: 0; }
+  5%   { opacity: 0.7; }
+  50%  { transform: translateX(55vw) translateY(-10vh); opacity: 0.8; }
+  90%  { opacity: 0.7; }
+  100% { transform: translateX(110vw) translateY(5vh); opacity: 0; }
+}
+
+@keyframes rocketExhaust {
+  0%   { transform: translateY(0) scale(1); opacity: 0.8; }
+  50%  { transform: translateY(15px) scale(0.5); opacity: 0.4; }
+  100% { transform: translateY(30px) scale(0); opacity: 0; }
+}
+
+/* ======================== */
+/* Heaven / Light mode enhancements */
+/* ======================== */
+@keyframes godRayPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%      { opacity: 0.6; transform: scaleY(1.1); }
+}
+
+@keyframes dustFloat {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+}
+
+@keyframes rainbowShimmer {
+  0%, 100% { opacity: 0.08; }
+  50%      { opacity: 0.15; }
+}
+
+.animate-god-ray { animation: godRayPulse 6s ease-in-out infinite; }
+.animate-dust-float { animation: dustFloat 15s linear infinite; }
+.animate-rainbow { animation: rainbowShimmer 8s ease-in-out infinite; }
+
+/* Mobile hamburger animation */
+@keyframes menuSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-menu-slide { animation: menuSlideDown 0.2s ease-out forwards; }

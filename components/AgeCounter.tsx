@@ -31,12 +31,11 @@ export default function AgeCounter() {
   }, []);
 
   return (
-    <div className="flex items-baseline gap-2">
-      <span className="text-4xl md:text-5xl font-black text-foreground">{age.years}</span>
-      <span className="text-sm font-bold text-foreground/40 uppercase tracking-widest">Years</span>
-      <span className="text-2xl md:text-3xl font-black text-foreground ml-2">{age.days}</span>
-      <span className="text-sm font-bold text-foreground/40 uppercase tracking-widest">Days</span>
+    <div className="flex items-baseline gap-1.5 sm:gap-2">
+      <span className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground">{age.years}</span>
+      <span className="text-xs sm:text-sm font-bold text-foreground/40 uppercase tracking-widest">Years</span>
+      <span className="text-xl sm:text-2xl md:text-3xl font-black text-foreground ml-1.5 sm:ml-2">{age.days}</span>
+      <span className="text-xs sm:text-sm font-bold text-foreground/40 uppercase tracking-widest">Days</span>
     </div>
   );
 }
-

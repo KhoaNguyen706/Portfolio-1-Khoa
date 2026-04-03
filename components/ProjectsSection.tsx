@@ -39,46 +39,46 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="relative px-4 py-24 pb-40">
+    <section id="projects" className="relative px-4 py-16 sm:py-24 pb-28 sm:pb-40">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-sm font-bold tracking-[0.2em] text-accent uppercase mb-4">My Portfolio</h2>
-          <h3 className="text-4xl md:text-5xl font-black text-foreground">Featured Projects</h3>
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-sm font-bold tracking-[0.2em] text-accent uppercase mb-3 sm:mb-4">My Portfolio</h2>
+          <h3 className="text-2xl sm:text-4xl md:text-5xl font-black text-foreground">Featured Projects</h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {projects.map((proj, idx) => (
             <div 
               key={idx} 
               className="bento-card group flex flex-col h-full"
             >
-              <div className="flex items-start justify-between mb-6">
-                <div className={`p-3 rounded-2xl bg-foreground/5 text-2xl mb-4 transition-colors group-hover:bg-accent/10 group-hover:text-accent`}>
+              <div className="flex items-start justify-between mb-4 sm:mb-6">
+                <div className={`p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-foreground/5 text-xl sm:text-2xl mb-3 sm:mb-4 transition-colors group-hover:bg-accent/10 group-hover:text-accent`}>
                   <FaGithub />
                 </div>
                 <a 
                   href={proj.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full hover:bg-foreground/5 transition-colors"
+                  className="p-2.5 sm:p-3 rounded-full hover:bg-foreground/5 transition-colors"
                 >
-                  <FaExternalLinkAlt className="text-foreground/40 hover:text-foreground" />
+                  <FaExternalLinkAlt className="text-foreground/40 hover:text-foreground text-sm sm:text-base" />
                 </a>
               </div>
 
               <div className="flex-grow">
-                <h4 className="text-2xl font-bold mb-1 group-hover:text-accent transition-colors">{proj.title}</h4>
-                <p className="text-sm font-bold text-foreground/40 uppercase tracking-widest mb-4">{proj.subtitle}</p>
-                <p className="text-foreground/60 leading-relaxed mb-6">
+                <h4 className="text-xl sm:text-2xl font-bold mb-1 group-hover:text-accent transition-colors">{proj.title}</h4>
+                <p className="text-xs sm:text-sm font-bold text-foreground/40 uppercase tracking-widest mb-3 sm:mb-4">{proj.subtitle}</p>
+                <p className="text-sm sm:text-base text-foreground/60 leading-relaxed mb-4 sm:mb-6">
                   {proj.desc}
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-2 mt-auto">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
                 {proj.tags.map((tag, i) => (
                   <span 
                     key={i} 
-                    className="px-3 py-1 rounded-full bg-foreground/[0.03] text-xs font-bold text-foreground/60 border border-foreground/[0.05]"
+                    className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-foreground/[0.03] text-[10px] sm:text-xs font-bold text-foreground/60 border border-foreground/[0.05]"
                   >
                     {tag}
                   </span>
@@ -87,11 +87,7 @@ export default function ProjectsSection() {
             </div>
           ))}
         </div>
-
-
-
       </div>
     </section>
   );
 }
-
